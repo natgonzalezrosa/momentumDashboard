@@ -4,9 +4,12 @@ html, body {
 }
 
 body {
-    background: no-repeat center center fixed;
+    background: no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 2px #474747;
 }
