@@ -31,10 +31,14 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     })
     .catch(err => console.error(err))
 
-function runTime() {
-  const date = new Date()
-    document.getElementById("time").innerHTML = `${date.toLocaleTimeString("en-us", {timeStyle: "short"})}`
-  
-}
+// function getCurrentTime() {
+//     const date = new Date()
+//     document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
+// }
 
-setInterval(runTime, 1000);
+// setInterval(getCurrentTime, 1000)
+
+
+navigator.geolocation.getCurrentPosition(position => {
+    console.log(position)
+});
