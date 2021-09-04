@@ -30,6 +30,8 @@ div.top {
 h1.time {
     text-align: center;
     font-size: 5rem;
+    margin-top: -1rem;
+    margin-bottom: 0.5rem;
 }
 
 div#crypto {
@@ -77,6 +79,16 @@ p.weather-temp {
     margin-left: -10px;
 }
 
-p#author {
+p#location {
     font-size: 1rem;
+}
+
+h2#set-up, h2#punchline {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h2#punchline {
+    font-style: italic;
 }

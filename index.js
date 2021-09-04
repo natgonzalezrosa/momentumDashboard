@@ -1,17 +1,24 @@
+
+// UNSPLASH API: USED TO OBTAIN RANDOM IMAGE AND ITS LOCATION
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     .then(res => res.json())
     .then(data => {
-        document.body.style.backgroundImage = `url(${data.urls.regular})`
-		document.getElementById("author").textContent = `By: ${data.user.name}`
+        document.body.style.backgroundImage = `url(${data.urls.full})`
+        if (data.location.name === null){
+            document.getElementById("location").textContent =`Somewhere in the middle of nowhere`
+        } else {
+            document.getElementById("location").textContent = `${data.location.name}`
+        }
     })
     .catch(err => {
-        // Use a default background image/author
-        document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1560008511-11c63416e52d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTEwMjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjI4NDIxMTc&ixlib=rb-1.2.1&q=80&w=1080
+        // Use a default background image/location
+        document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80
 )`
-		document.getElementById("author").textContent = `By: Dodi Achmad`
+		document.getElementById("location").textContent = `Zillertal Alps, Italy`
     })
 
-fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
+// COINGECKO API: USED TO OBTAIN BITCOIN INFO
+fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
     .then(res => {
         if (!res.ok) {
             throw Error("Something went wrong")
@@ -31,6 +38,7 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     })
     .catch(err => console.error(err))
 
+// GET THE CURRENT TIME AND DISPLAY IT EVERY SECOND
 function getCurrentTime() {
     const date = new Date()
     document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
@@ -38,6 +46,7 @@ function getCurrentTime() {
 
 setInterval(getCurrentTime, 1000)
 
+// OPENWEATHERMAP API: USING CURRENT POSITION, OBTAIN USER'S WEATHER, TEMP AND CITY
 navigator.geolocation.getCurrentPosition(position => {
     fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
         .then(res => {
@@ -56,3 +65,16 @@ navigator.geolocation.getCurrentPosition(position => {
         })
         .catch(err => console.error(err))
 });
+
+// OFFICIAL JOKE API: USED TO OBTAIN RANDOM PROGRAMMER JOKE
+fetch("https://official-joke-api.appspot.com/jokes/programming/random")
+    .then(res => {
+        if(!res.ok){
+            throw Error("Joke data is not available")
+        }
+        return res.json()
+    })
+    .then(data => {
+        document.getElementById('set-up').textContent = `${data[0].setup}`
+        document.getElementById('punchline').textContent = `${data[0].punchline}`
+    })
