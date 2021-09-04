@@ -12,9 +12,9 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     })
     .catch(err => {
         // Use a default background image/location
-        document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80
+        document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1479030160180-b1860951d696?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzA3OTY5MzI&ixlib=rb-1.2.1&q=85
 )`
-		document.getElementById("location").textContent = `Zillertal Alps, Italy`
+		document.getElementById("location").textContent = `Lower Antelope Canyon, Page, United States`
     })
 
 // COINGECKO API: USED TO OBTAIN BITCOIN INFO
