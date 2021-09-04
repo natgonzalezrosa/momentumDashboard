@@ -22,17 +22,14 @@ main {
     justify-content: space-between;
 }
 
+/* STYLING FOR TOP DIV SECTION */
+
 div.top {
     display: flex;
     justify-content: space-between;
 }
 
-h1.time {
-    text-align: center;
-    font-size: 5rem;
-    margin-top: -1rem;
-    margin-bottom: 0.5rem;
-}
+/* CRYPTO SECTION STYLING */
 
 div#crypto {
     font-size: 1.3rem;
@@ -51,6 +48,8 @@ div#crypto-top {
 div#crypto-top > span {
     margin-left: 10px;
 }
+
+/* WEATHER SECTION STYLING */
 
 div#weather {
     display: flex;
@@ -79,9 +78,18 @@ p.weather-temp {
     margin-left: -10px;
 }
 
-p#location {
-    font-size: 1rem;
+/* CENTER SECTION STYLING */
+
+/* TIME STYLING */
+
+h1.time {
+    text-align: center;
+    font-size: 5rem;
+    margin-top: -1rem;
+    margin-bottom: 0.5rem;
 }
+
+/* JOKE STYLING */
 
 h2#set-up, h2#punchline {
     text-align: center;
@@ -91,4 +99,10 @@ h2#set-up, h2#punchline {
 
 h2#punchline {
     font-style: italic;
+}
+
+/* LOCATION STYLING */
+
+p#location {
+    font-size: 1rem;
 }
